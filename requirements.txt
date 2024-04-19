@@ -1,0 +1,23 @@
+# local package
+-e .
+
+# external requirements
+click
+Sphinx
+coverage
+minio
+scikit-learn
+dvc
+pandas
+numpy
+seaborn
+matplotlib
+plotly
+mlflow
+streamlit
+langchain
+langchain-community
+langchain-core
+flake8
+streamlit-shadcn-ui
+python-dotenv>=0.5.1

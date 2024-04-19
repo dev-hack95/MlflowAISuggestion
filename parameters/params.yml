@@ -1,0 +1,25 @@
+RandomForest:
+  params:
+    n_estimators: 200
+
+AdaBoost:
+  params:
+    n_estimators: 200
+
+GradientBoost:
+  params:
+    n_estimators: 200
+    learning_rate: 1e-3
+
+Bagging:
+  params:
+    n_estimators: 200
+    max_features: 0.5
+    max_samples: 1.0
+
+DecisionTree:
+  params:
+    
+ExtraTree:
+  params:
+    n_estimators: 200

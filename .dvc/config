@@ -1,0 +1,8 @@
+[core]
+    remote = myremote
+['remote "myremote"']
+    url = s3://playground-series-s4e4/data
+    endpointurl = http://192.168.29.7:9000/
+    access_key_id = root
+    secret_access_key = rushi12345
+    use_ssl = false
