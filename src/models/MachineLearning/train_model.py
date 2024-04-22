@@ -53,7 +53,7 @@ class TrainModelV1:
         return x_train, y_train, x_test, y_test
 
     def Train(self, model, model_name, x_train, y_train, x_test, y_test):
-        with mlflow.start_run():
+        with mlflow.start_run(run_name=f"{model_name}_{args.version}"):
             logging.info("* Metrics Logging ")
             logging.info(f"------------------------------ {model_name} ------------------------------------------")
             model = model.fit(x_train, y_train)
