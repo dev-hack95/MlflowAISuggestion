@@ -84,5 +84,6 @@ class DataTransformation:
 
         transformed_data = pipe.fit_transform(pd.read_csv("data/interim/train.csv"))
         transformed_data = transformed_data.sample(n=20000, random_state=42)
+        transformed_data.to_csv("data/processed/train.csv", index=False)
         return transformed_data
         

@@ -10,6 +10,7 @@ from sqlalchemy.engine import create_engine
 from sqlalchemy.orm import sessionmaker
 
 # Config
+warnings.filterwarnings("ignore")
 st.set_page_config(layout="wide")
 
 st.header("📊 MlFlow Analytics")
@@ -106,6 +107,9 @@ class GraphSchema:
     def _show_graph(self):
         graph = agraph(nodes=self.nodes, edges=self.edges, config=self.config)
         return graph
+    
+    def _return_data(self):
+        return self.nodes
 
 
 #tables = db.execute(text("SELECT name FROM sqlite_master WHERE type='table';")).fetchall()
@@ -166,5 +170,6 @@ with tab2:
      test_1._get_data(experiment_data_2, metrics=selected_metrics)
      test_1._create_edges(experiment_data_2)
      test_1._show_graph()
-     test_1._add_data(experiment_data_2, metrics=selected_metrics)
-     st.write(test_1.nodes[0].info)
+     #test_1._add_data(experiment_data_2, metrics=selected_metrics)
+     output = test_1._return_data()
+     #st.write([node.info['params'] for node in output])
