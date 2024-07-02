@@ -15,6 +15,8 @@ st.set_page_config(layout="wide")
 
 st.header("📊 MlFlow Analytics")
 
+df = pd.read_csv("data/processed/train.csv")
+
 class DatabaseSession:
     def __init__(self):
         self.engine = create_engine("sqlite:///playground-series-s4e4.db", echo=True)
@@ -170,6 +172,6 @@ with tab2:
      test_1._get_data(experiment_data_2, metrics=selected_metrics)
      test_1._create_edges(experiment_data_2)
      test_1._show_graph()
-     #test_1._add_data(experiment_data_2, metrics=selected_metrics)
+     test_1._add_data(experiment_data_2, metrics=selected_metrics)
      output = test_1._return_data()
-     #st.write([node.info['params'] for node in output])
+     #st.write(df.quantile([0.25, 0.5, 0.75]))

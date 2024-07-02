@@ -24,5 +24,10 @@ class MLFlowAI:
         your role involves deep analysis and optimization of hyperparameters for machine learning models. 
         your work consist meticulous investigation various hyperparameter configurations to enhance model accuracy and performance"""
 
+        self.model = ChatOllama(
+            base_url = "http://localhost:11434/",
+            model = "mistral"
+        )
+
     def chat(self, query: List) -> str:
         pass 
